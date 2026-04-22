@@ -5,14 +5,11 @@ import json
 app = FastAPI()
 templates = Jinja2Templates(directory="templates")
 
-with open("productos.json", "r") as f:
-    productos = json.load(f)
-
-productos = [
-    {"codigo": 1, "nombre": "Cuaderno", "valoru": 5000, "existencias": 100},
-    {"codigo": 2, "nombre": "Esfero", "valoru": 2500, "existencias": 250},
-    {"codigo": 3, "nombre": "Lapiz", "valoru": 1500, "existencias": 30}
-]
+try:
+    with open("productos.json", "r") as f:
+        productos = json.load(f)
+except:
+    productos = []
 
 def calcular_datos(producto):
     total = producto["valoru"] * producto["existencias"]

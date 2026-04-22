@@ -29,6 +29,10 @@
         tr:nth-child(even) {
             background-color: #f2f2f2;
         }
+
+        .bajo { background-color: #ffcccc; }
+        .medio { background-color: #fff3cd; }
+        .alto { background-color: #d4edda; }
     </style>
 </head>
 <body>
@@ -45,32 +49,16 @@
         <th>Estado</th>
     </tr>
 
-    <tr>
-        <td>1</td>
-        <td>Cuaderno</td>
-        <td>5000</td>
-        <td>100</td>
-        <td>500000</td>
-        <td>Medio</td>
+    {% for p in productos %}
+    <tr class="{{ p.estado|lower }}">
+        <td>{{ p.codigo }}</td>
+        <td>{{ p.nombre }}</td>
+        <td>{{ p.valoru }}</td>
+        <td>{{ p.existencias }}</td>
+        <td>{{ p.total }}</td>
+        <td>{{ p.estado }}</td>
     </tr>
-
-    <tr>
-        <td>2</td>
-        <td>Esfero</td>
-        <td>2500</td>
-        <td>250</td>
-        <td>625000</td>
-        <td>Alto</td>
-    </tr>
-
-    <tr>
-        <td>3</td>
-        <td>Lápiz</td>
-        <td>1500</td>
-        <td>30</td>
-        <td>45000</td>
-        <td>bajo</td>
-    </tr>
+    {% endfor %}
 
 </table>
 

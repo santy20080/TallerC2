@@ -1,0 +1,5 @@
+[
+    {"codigo": 1, "nombre": "Cuaderno", "valoru": 5000, "existencias": 100},
+    {"codigo": 2, "nombre": "Esfero", "valoru": 2500, "existencias": 250},
+    {"codigo": 3, "nombre": "Lapiz", "valoru": 1500, "existencias": 60}
+]
